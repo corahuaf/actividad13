@@ -1,0 +1,34 @@
+<div class="w-1/2 mx-auto">
+    <div class="bg-blue-200 p-8 m-8">
+        <div>
+            <label for="">Valor: </label>
+            <input class="bg-gray-50 border border-gray-300 rounded-lg block w-full p-2"  type="text" [(ngModel)]="inputValue" >    
+        </div>        
+        <label  for="">{{inputValue | uppercase }}</label>
+    </div>
+        
+    
+    
+    
+    
+    <div class="bg-green-200 p-8 m-8">
+        <label for="">Valor: </label>
+        <input type="text" class="bg-gray-50 border border-gray-300 rounded-lg block w-full p-2" [(ngModel)]="inputValue2" >    
+        <br>
+        <select class="bg-gray-50 border border-gray-300 rounded-lg block w-1/2 p-2" [(ngModel)]="opcion">
+            <option value="a">USD</option>
+            <option value="b">EUR</option>
+        </select>
+        
+        <div [ngSwitch]="opcion" class="pt-5">
+            <div *ngSwitchCase="'a'"><label for="">{{inputValue2 | currency:'USD' }}</label></div>
+            <div *ngSwitchCase="'b'"><label for="">{{inputValue2 | currency:'EUR' }}</label></div>
+          </div>
+
+    </div>
+     
+    
+    
+
+</div>
+
